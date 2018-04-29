@@ -31,7 +31,7 @@ public class FileWrite {
 			File file = new File("/home/hongseok/fosex5.txt");
 			FileOutputStream fos = new FileOutputStream(file);
 
-			DataBody dataBody = new DataBody((byte)76, params);
+			DataBody dataBody = new DataBody(params,(byte)76);
 			DataMerging data1 = new DataMerging(dh, dataBody);
 			
 			// 클라이언트 클래스에서 생성 후 fillWithNVL을 사용하면 파라미터를 쓰게 된다.

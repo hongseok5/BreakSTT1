@@ -11,36 +11,9 @@ public class DataBody {
 	protected byte[] dataBody;
 	private final static byte PARAM_SIZE = 32;
 		
-	public DataBody(byte bodyType, List<String> params) throws UnsupportedEncodingException {
+	public DataBody(List<String> params,byte bodyType) throws UnsupportedEncodingException {
 		//assume that all parameter size is below 32 Bytes except main stt data.
-		/*
-		switch(bodyType) {
-			case 68:
-				this.dataSize = 1024 + 1;
-				break;
-				//delete param 
-			case 73:
-				this.dataSize = 2048 + 1;
-				break;
-				//insert param 
-			case 76:
-				this.dataSize = 64 + 1;
-				break;
-				//login data
-			case (byte) 83:
-				this.dataSize = 1024 + 1;
-				break;
-				//select param
-			case (byte) 84:
-				this.dataSize = 99999744 + 1;
-				break;
-				//stt data
-			case (byte) 85:
-				this.dataSize = 512 + 1;
-				break;
-				//update param
-		}
-		*/
+
 		this.dataSize = params.size() * 32 + 1;
 		System.out.println("DataBody : " + dataSize);
 		dataBody = new byte[dataSize];
@@ -64,7 +37,8 @@ public class DataBody {
 			for(int i = 0; i < gap; i++) {
 				dataBody[index++] = 0x00;
 			}
-		}
+			
+		} 
 	}
 	
 	

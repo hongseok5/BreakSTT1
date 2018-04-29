@@ -12,7 +12,7 @@ public class DataMerging {
 		dataSize += HEADER_SIZE;
 		mergedData = new byte[dataSize];
 		System.out.println("DataMerging : " + mergedData.length );
-		System.out.println("DataMerging : " + dataBody.getDataSize() );
+		System.out.println("DataBodySize : " + dataBody.getDataSize() );
 		int index = 0;
 		
 		for(int i = 0; i < HEADER_SIZE; i++) {			
