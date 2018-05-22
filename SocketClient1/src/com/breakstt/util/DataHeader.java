@@ -16,45 +16,10 @@ public class DataHeader {
 	private byte[] dataHeader = new byte[DATA_HD_SIZE];
 
 	int arrayIndex = 0;
-	// DATA TYPE : SQL = I, U, D, S, TEXT = T,  LOGIN = L 
-	//  D =1024  I L=64 S=2048  T=9999,9744 U 
 	private final byte[] DATA_TYPE = new byte[] {68, 73, 76, 83, 84, 85}; 
 	
 	/*
-	public DataHeader(byte[] length, byte dataType) {
-		int arrayIndex = 0;		
-		//check dataType and length
-		if(length.length != 8 ) {
-			System.out.println("DataLength is not valid");
-		}
-		
-		this.dataHeader[arrayIndex++] = STX;
-		// first is STX
-		
-		for(int i=0; i < DATA_HD_LENGTH; i++) {
-			this.dataHeader[arrayIndex++] = length[i];
-		}
-		
-		
-		for(int i=0; i < DATA_TYPE.length; i++) {
-			if(dataType == DATA_TYPE[i]) {
-				this.dataHeader[arrayIndex++] = dataType;
-			}
-			else {
-				System.out.println("DataType is not valid");
-			}
-		}		
-		
-		for(int i = arrayIndex; i < DATA_HD_SIZE; i++) {
-			this.dataHeader[i] = NVL;
-			
-		}
-		for(int i = 0; i < DATA_HD_SIZE; i++) {
-			System.out.print(this.dataHeader[i]);
-		}
-		System.out.println("DataHeader : DataHeader object created successfully!" );		
-		
-	}
+
 	*/
 	public DataHeader(List<String> params, byte dataType) {
 		System.out.println("DataHeader : " + params.size());

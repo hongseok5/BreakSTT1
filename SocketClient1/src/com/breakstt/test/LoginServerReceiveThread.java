@@ -26,10 +26,7 @@ public class LoginServerReceiveThread extends Thread {
 			InputStream is = socket.getInputStream();
 			OutputStream os = socket.getOutputStream();
 			while(true) {
-				byte[] data = is.readAllBytes();
-				System.out.println("Received Data is : ");
-				for(int i = 0; i < data.length; i++)
-				System.out.print(data[i]);
+
 			}
 		}catch(IOException ioe) {
 			ioe.printStackTrace();
